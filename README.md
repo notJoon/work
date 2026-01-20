@@ -1,0 +1,2 @@
+# work
+Work journal CLI
