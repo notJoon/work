@@ -32,7 +32,7 @@ pub fn create_today_section(content: &str) -> String {
     let today = get_today();
     let mut result = String::new();
 
-     result.push_str("\n\n\n");
+    result.push_str("\n\n\n");
     result.push_str(&today);
     result.push('\n');
     result.push_str("==========\n");
