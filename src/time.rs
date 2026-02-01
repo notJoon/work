@@ -7,15 +7,10 @@ pub fn get_today() -> String {
 
 pub fn get_current_time() -> String {
     let now = Local::now();
-    let hour = now.format("%d").to_string().parse::<u32>().unwrap_or(0);
+    let hour = now.format("%H").to_string().parse::<u32>().unwrap_or(0);
     let minute = now.format("%M").to_string();
 
-    let mut period = String::new();
-    if hour >= 12 {
-        period = "오후".to_string();
-    } else {
-        period = "오전".to_string();
-    }
+    let period = if hour >= 12 { "오후" } else { "오전" };
 
-    format!("[{} {:02}:{}]", period, hour % 12, minute)
+    format!("[{} {:02}:{}]", period, hour, minute)
 }
